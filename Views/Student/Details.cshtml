@@ -1,0 +1,28 @@
+@model Student?
+
+@{
+    ViewData["Title"] = "Студент";
+}
+
+<h1>Студент</h1>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+@if (Model != null)
+{
+    <dl class="row">
+        <dt class="col-sm-2">ФИО</dt>
+        <dd class="col-sm-10">@Model.FullName</dd>
+        <dt class="col-sm-2">Группа</dt>
+        <dd class="col-sm-10">@Model.Group</dd>
+        <dt class="col-sm-2">Курс</dt>
+        <dd class="col-sm-10">@Model.Course</dd>
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+    </dl>
+}
+
+<a asp-action="Index">К списку</a>
